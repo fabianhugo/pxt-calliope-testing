@@ -332,11 +332,11 @@ addTest("music.changeTempoBy - relative BPM change", function () {
 
 addCategory("pins")
 
-addTest("pins - digitalWritePin toggle all pins 3x", function () {
+addTest("pins - digitalWritePin toggle all pins P0-C20 (not C5, C11 (Buttons)) 3x", function () {
     let pinIds = [
         DigitalPin.P0, DigitalPin.P1, DigitalPin.P2, DigitalPin.P3,
-        DigitalPin.C4, DigitalPin.C5, DigitalPin.C6, DigitalPin.C7,
-        DigitalPin.C8, DigitalPin.C9, DigitalPin.C10, DigitalPin.C11,
+        DigitalPin.C4, DigitalPin.C6, DigitalPin.C7,
+        DigitalPin.C8, DigitalPin.C9, DigitalPin.C10,
         DigitalPin.C12, DigitalPin.C13, DigitalPin.C14, DigitalPin.C15,
         DigitalPin.C16, DigitalPin.C17, DigitalPin.C18, DigitalPin.P19,
         DigitalPin.P20
@@ -368,24 +368,24 @@ addTest("pins - digitalReadPin P0", function () {
     serial.writeLine("P0 digital read: " + val + "  (0 or 1)")
 })
 
-addTest("pins - analogWritePin all pins P0-P20 (PWM 512 then 0)", function () {
+addTest("pins - analogWritePin all pins P0-C20 (not C5, C11 (Buttons)) (PWM 512 then 0)", function () {
     let aNames = ["P0", "P1", "P2", "P3",
-        "C4", "C5", "C6", "C7", "C8", "C9", "C10",
-        "C11", "C12", "C13", "C14", "C15", "C16",
+        "C4", "C6", "C7", "C8", "C9", "C10",
+        "C12", "C13", "C14", "C15", "C16",
         "C17", "C18", "P19", "P20"]
-    let aIds = [
-        AnalogPin.P0, AnalogPin.P1, AnalogPin.P2, AnalogPin.P3,
-        AnalogPin.C4, AnalogPin.C5, AnalogPin.C6, AnalogPin.C7,
-        AnalogPin.C8, AnalogPin.C9, AnalogPin.C10, AnalogPin.C11,
-        AnalogPin.C12, AnalogPin.C13, AnalogPin.C14, AnalogPin.C15,
-        AnalogPin.C16, AnalogPin.C17, AnalogPin.C18, AnalogPin.P19,
-        AnalogPin.P20
+    let pinIds = [
+        DigitalPin.P0, DigitalPin.P1, DigitalPin.P2, DigitalPin.P3,
+        DigitalPin.C4, DigitalPin.C6, DigitalPin.C7,
+        DigitalPin.C8, DigitalPin.C9, DigitalPin.C10,
+        DigitalPin.C12, DigitalPin.C13, DigitalPin.C14, DigitalPin.C15,
+        DigitalPin.C16, DigitalPin.C17, DigitalPin.C18, DigitalPin.P19,
+        DigitalPin.P20
     ]
-    for (let i = 0; i < aIds.length; i++) {
-        pins.analogWritePin(aIds[i], 512)
+    for (let i = 0; i < pinIds.length; i++) {
+        pins.analogWritePin(pinIds[i], 512)
         serial.writeLine(aNames[i] + " analog write 512 (~50% PWM)")
         basic.pause(200)
-        pins.analogWritePin(aIds[i], 0)
+        pins.analogWritePin(pinIds[i], 0)
     }
     serial.writeLine("All analog writes done.")
 })
