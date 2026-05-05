@@ -301,9 +301,9 @@ addTest("music.ringTone / rest - ring then silence", function () {
     serial.writeLine("Rang 880 Hz, then rested 500 ms.")
 })
 
-addTest("music.playMelody - built-in melody (Entertainer)", function () {
+addTest("music.playMelody - built-in melody", function () {
     music.playMelody(music.builtInMelody(Melodies.Baddy).join(" "), 120)
-    serial.writeLine("Playing Entertainer at 120 BPM.")
+    serial.writeLine("Playing melody at 120 BPM.")
     basic.pause(3000)
 })
 
