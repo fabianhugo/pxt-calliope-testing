@@ -342,24 +342,21 @@ addTest("pins - digitalWritePin toggle all pins P0-C20 (not C5, C11 (Buttons)) 3
         DigitalPin.P20
     ]
     led.enable(false)
-    serial.writeLine("Toggling all pins 3 times...")
-    for (let rep = 0; rep < 3; rep++) {
-        for (let pi = 0; pi < pinIds.length; pi++) {
-            pins.digitalWritePin(pinIds[pi], 0)
-            basic.pause(300)
-        
+    serial.writeLine("Toggling all pins 5 times...")
+    for (let n = 0; n < 5; n++) {
+        for (let i = 0; i < pinIds.length; i++) {
+            pins.digitalWritePin(pinIds[i], 0)
         }
-        basic.pause(1000)
-        for (let pi = 0; pi < pinIds.length; pi++) {
-        pins.digitalWritePin(pinIds[pi], 1)
+        basic.pause(500)
+        for (let i = 0; i < pinIds.length; i++) {
+            pins.digitalWritePin(pinIds[i], 1)
         }
+        basic.pause(500)
     }
+    
     
     led.enable(true)
     // restore button handlers after overriding with led.enable
-    input.onButtonPressed(Button.A, function () { advance() })
-    input.onButtonPressed(Button.B, function () { repeat() })
-    input.onButtonPressed(Button.AB, function () { skipCategory() })
     serial.writeLine("Pin toggle done.")
 })
 
@@ -369,25 +366,25 @@ addTest("pins - digitalReadPin P0", function () {
 })
 
 addTest("pins - analogWritePin all pins P0-C20 (not C5, C11 (Buttons)) (PWM 512 then 0)", function () {
-    let aNames = ["P0", "P1", "P2", "P3",
-        "C4", "C6", "C7", "C8", "C9", "C10",
-        "C12", "C13", "C14", "C15", "C16",
-        "C17", "C18", "P19", "P20"]
-    let pinIds = [
-        DigitalPin.P0, DigitalPin.P1, DigitalPin.P2, DigitalPin.P3,
-        DigitalPin.C4, DigitalPin.C6, DigitalPin.C7,
-        DigitalPin.C8, DigitalPin.C9, DigitalPin.C10,
-        DigitalPin.C12, DigitalPin.C13, DigitalPin.C14, DigitalPin.C15,
-        DigitalPin.C16, DigitalPin.C17, DigitalPin.C18, DigitalPin.P19,
-        DigitalPin.P20
+    let awpinIds = [
+    DigitalPin.P0, DigitalPin.P1, DigitalPin.P2, DigitalPin.P3,
     ]
-    for (let i = 0; i < pinIds.length; i++) {
-        pins.analogWritePin(pinIds[i], 512)
-        serial.writeLine(aNames[i] + " analog write 512 (~50% PWM)")
-        basic.pause(200)
-        pins.analogWritePin(pinIds[i], 0)
+    led.enable(false)
+    serial.writeLine("analog write 950 on P0-P3 (~95% PWM, should be dim, then off) 5 times...")
+    for (let index = 0; index < 5; index++) {
+        for (let i = 0; i <= awpinIds.length - 1; i++) {
+            pins.analogWritePin(awpinIds[i], 950)
+        }
+        basic.pause(500)
+        for (let j = 0; j <= awpinIds.length - 1; j++) {
+            pins.digitalWritePin(awpinIds[j], 1)
+        }
+        basic.pause(500)
     }
+    led.enable(true)
     serial.writeLine("All analog writes done.")
+
+
 })
 
 addTest("pins - analogReadPin all analog pins", function () {
@@ -402,9 +399,10 @@ addTest("pins - analogReadPin all analog pins", function () {
 addTest("pins - servoWritePin P0 (90 deg)", function () {
     pins.servoWritePin(AnalogPin.P0, 90)
     serial.writeLine("P0 servo set to 90 deg")
-    basic.pause(600)
-    pins.analogWritePin(AnalogPin.P0, 0)
-    serial.writeLine("P0 PWM off")
+    basic.pause(1000)
+    pins.servoWritePin(AnalogPin.P0, 150)
+    serial.writeLine("P0 servo set to 150 deg")
+    basic.pause(1000)
 })
 
 // ---------------------------------------------------------------------------

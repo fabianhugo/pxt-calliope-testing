@@ -1,0 +1,53 @@
+#,Category,Test
+1,basic,basic.showNumber(42)
+2,basic,basic.showString('ABC')
+3,basic,basic.showLeds (Happy face)
+4,basic,basic.showIcon(Sad)
+5,basic,basic.setLedColors - 3 RGB LEDs (yellow / red / green)
+6,basic,basic.setLedColor - single RGB LED (red)
+7,basic,basic.turnRgbLedOff - clear all RGB LEDs
+8,basic,basic.clearScreen()
+9,input,input.temperature() - read chip temperature
+10,input,input.lightLevel() - read ambient light (0-255)
+11,input,input.compassHeading() - read compass (0-359 deg)
+12,input,input.acceleration X/Y/Z
+13,input,input.acceleration Strength
+14,input,input.rotation Pitch/Roll
+15,input,input.magneticForce X/Y/Z
+16,input,input.runningTime() - ms since start
+17,input,input.onGesture(Shake) - shake the board
+18,music,music.playTone - single tone (440 Hz / 500 ms) + note frequencies
+19,music,music.ringTone / music.rest - ring then silence
+20,music,music.playMelody - built-in melody
+21,music,music.tempo / music.setTempo - read and change BPM
+22,music,music.changeTempoBy - relative BPM change
+23,pins,pins.digitalWritePin - toggle all pins P0-C20 3x
+24,pins,pins.digitalReadPin - read P0
+25,pins,pins.analogWritePin - pins P0-P3 (PWM 950 then 1)
+26,pins,pins.analogReadPin - all analog pins
+27,pins,pins.servoWritePin - P0 at 90 deg then 150 deg
+28,led,led.plot / led.unplot - single pixel
+29,led,led.toggle - toggle pixel
+30,led,led.point - read pixel state
+31,led,led.setBrightness - set to 100 then 255
+32,led,led.stopAnimation - stop scrolling text mid-way
+33,loops,for loop - repeat N times
+34,loops,while - loop with condition
+35,loops,break - break out of loop
+36,loops,continue - skip odd numbers
+37,logic,&& AND operator
+38,logic,|| OR operator
+39,logic,! NOT operator
+40,logic,else if chain
+41,variables,Number / string / boolean smoke test
+42,math,Math.abs / sqrt / round / floor / ceil / min / max / randint / arithmetic
+43,motors,motors.dualMotorPower - M0 forward 50% / M1 backward 50%
+44,motors,motors.dualMotorPower(M0_M1 / 0) - stop both motors
+45,motors,motors.dualMotorPower - speed ramp up/down M0 and M1
+46,arrays,push / pop / indexOf / reverse / splice
+47,text,length / charAt / indexOf / substr / slice / toUpperCase / toLowerCase / split / join / parseInt / parseFloat
+48,serial,serial.writeLine / writeNumber / writeValue / writeString
+49,game,game.setScore / addScore / score / setLife / removeLife / life / createSprite
+50,images,images.createImage - show image
+51,images,images.createBigImage - scroll image
+52,images,img.setPixelBrightness / img.pixelBrightness - pixel read/write
