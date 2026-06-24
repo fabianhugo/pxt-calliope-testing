@@ -1,0 +1,36 @@
+#,Category,Test
+1,basic,basic.show_number(42)
+2,basic,basic.show_string('ABC')
+3,basic,basic.show Image.HAPPY
+4,basic,display.clear()
+5,input,temperature()
+6,input,display.read_light_level()
+7,input,compass.heading()
+8,input,accelerometer.get_x/get_y/get_z
+9,input,running_time()
+10,input,shake gesture
+11,music,music.pitch(440, 500)
+12,music,music.play(music.BA_DING)
+13,led,display.set_pixel plot/unplot
+14,led,display.get_pixel()
+15,led,display.scroll stop
+16,pins,pin.write_digital()
+17,pins,pin0.read_digital()
+18,pins,pin.write_analog()
+19,pins,pin.read_analog()
+20,loops,for loop
+21,loops,while loop
+22,loops,break
+23,loops,continue
+24,logic,AND
+25,logic,OR
+26,logic,NOT
+27,logic,else if chain
+28,variables,number / string / boolean smoke test
+29,math,math ops / random
+30,arrays,push / pop / indexOf / reverse / splice-like
+31,text,string ops
+32,serial,print / serial output
+33,images,Image(...) + display.show
+34,images,Image scroll
+35,images,image pixel read/write
