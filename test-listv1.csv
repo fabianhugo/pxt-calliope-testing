@@ -1,0 +1,32 @@
+#,Category,Test
+1,basic,basic.showNumber(42)
+2,basic,basic.showString('ABC')
+3,basic,basic.showLeds (pattern)
+4,basic,basic.showIcon(Sad)
+5,basic,basic.setLedColor - single RGB LED (red)
+6,basic,basic.turnRgbLedOff()
+7,basic,basic.clearScreen()
+8,input,input.temperature()
+9,input,input.lightLevel()
+10,input,input.compassHeading()
+11,input,input.acceleration X/Y/Z
+12,input,input.acceleration Strength
+13,input,input.rotation Pitch/Roll
+14,input,input.magneticForce X/Y/Z
+15,input,input.runningTime()
+16,input,input.onGesture(Shake)
+17,music,music.playTone(440, 500)
+18,music,music.ringTone(880) + music.rest(500)
+19,music,music.tempo / music.setTempo / music.changeTempoBy
+20,led,led.plot / led.unplot - single pixel
+21,led,led.toggle - toggle pixel
+22,led,led.point - read pixel state
+23,led,led.setBrightness - set 60 then 255
+24,motors,motors.dualMotorPower - M0 forward 50% / M1 backward 50%
+25,motors,motors.dualMotorPower(M0_M1 / 0) - stop both motors
+26,motors,motors.dualMotorPower - speed ramp up/down M0_M1
+27,pins,pins.digitalWritePin - toggle pins P0-C18 3x
+28,pins,pins.digitalReadPin - read P0
+29,pins,pins.analogWritePin - pins P0-C18 PWM
+30,pins,pins.analogReadPin - read analog pins
+31,pins,pins.servoWritePin - P0 at 90 deg

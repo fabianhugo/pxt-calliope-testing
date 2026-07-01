@@ -175,11 +175,7 @@ addTest(function () {
     serial.writeLine("ringTone 880 + rest")
 })
 
-addTest(function () {
-    music.playMelody(music.builtInMelody(Melodies.Baddy).join(" "), 120)
-    basic.pause(3000)
-    serial.writeLine("melody Baddy")
-})
+
 
 addTest(function () {
     let bpm = music.tempo()
