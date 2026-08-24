@@ -309,9 +309,9 @@ addTest(function () {
 })
 
 addTest(function () {
-    pins.servoWritePin(AnalogPin.P0, 90)
+    pins.servoWritePin(AnalogPin.P1, 90)
     basic.pause(600)
-    pins.analogWritePin(AnalogPin.P0, 0)
+    pins.analogWritePin(AnalogPin.P1, 0)
     serial.writeLine("sv ok")
 })
 
