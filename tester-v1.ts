@@ -271,6 +271,7 @@ let pinIds = [
 addTest(function () {
     
     
+    led.enable(false)
     serial.writeLine("toggle 3x")
     for (let rep = 0; rep < 3; rep++) {
         for (let pi = 0; pi < pinIds.length; pi++) {
@@ -282,6 +283,7 @@ addTest(function () {
         }
         basic.pause(1000)
     }
+    led.enable(true)
 })
 
 addTest(function () {
