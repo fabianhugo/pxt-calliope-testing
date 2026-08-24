@@ -272,18 +272,17 @@ addTest(function () {
     
     
     led.enable(false)
-    serial.writeLine("toggle 3x")
-    for (let rep = 0; rep < 3; rep++) {
+    serial.writeLine("toggle 20x")
+    for (let rep = 0; rep < 20; rep++) {
         for (let pi = 0; pi < pinIds.length; pi++) {
             pins.digitalWritePin(pinIds[pi], 0)
         }
-        basic.pause(1000)
+        basic.pause(500)
         for (let pi = 0; pi < pinIds.length; pi++) {
             pins.digitalWritePin(pinIds[pi], 1)
         }
-        basic.pause(1000)
+        basic.pause(500)
     }
-    led.enable(true)
 })
 
 addTest(function () {
