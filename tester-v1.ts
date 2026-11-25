@@ -304,10 +304,10 @@ addTest(function () {
 })
 
 addTest(function () {
-    let aIds = [AnalogPin.P0, AnalogPin.P1, AnalogPin.P2,
-        AnalogPin.C4, AnalogPin.C10, AnalogPin.C16, AnalogPin.C18]
+    let aIds = [AnalogPin.P1, AnalogPin.P2, AnalogPin.C4,
+        AnalogPin.C5, AnalogPin.C6, AnalogPin.C16, AnalogPin.C17]
     for (let i = 0; i < aIds.length; i++) {
-        serial.writeLine(i + ": " + pins.analogReadPin(aIds[i]))
+        serial.writeLine(aIds[i]-100 + ": " + pins.analogReadPin(aIds[i]))
     }
 })
 
